@@ -28,7 +28,7 @@ ostream& operator<< (ostream& out, Matrix& mat1)
 	return out;
 }
 
-/*ostream& operator<< (ostream& out, element& el2)
+ostream& operator<< (ostream& out, element& el2)
 {
 	out<< "Modul:"<<el2.Getmodul<<endl;
 	out<< "Value:"<<el2.Getvalue<<endl;
@@ -40,10 +40,10 @@ istream& operator>> (istream& in, element& el2)
 	in>>"Modul:">>el2.Getmodul >> endl;
 	in>>"Value:">>el2.Getvalue >> endl;
 	return in;
-}*/
+}
 
 
-/*ostream& operator<< (ostream& out, Matrix& mat1)
+ostream& operator<< (ostream& out, Matrix& mat1)
 {
 	out << mat1.n << " " << mat1.m << endl;
 for (int i=0; i<mat1.n; i++)
@@ -66,7 +66,7 @@ for (int i=0; i<mat1.n; i++)
 			in >> mat1.pm[i][j] >> " ";
 }
 return in;
-}*/
+}
 /*ostream& operator<<(ostream& out, myelement& el2)
 
 {
