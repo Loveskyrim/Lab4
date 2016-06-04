@@ -25,12 +25,6 @@ Matrix::Matrix(myelement **p, int n1, int m1)
 
 }
 
-	/*myelement& index(int n, int m)//Обращение по элементу
-{
-	
-	
-	return pm[n][m];
-}*/
 
 
 void Matrix::Print()
@@ -47,7 +41,7 @@ void Matrix::Print()
 	}
 }
 
-Matrix& Matrix::operator+ (Matrix &mat1)// Сложение матриц
+Matrix Matrix::operator+ (Matrix &mat1)// Сложение матриц
 	{
 		myelement ** pM=new myelement*[n];
 		
@@ -57,14 +51,14 @@ Matrix& Matrix::operator+ (Matrix &mat1)// Сложение матриц
 			for (int j=0; j<m; j++)
 				pM[i][j]=pm[i][j]+mat1.pm[i][j];
 		}
-		Matrix *p=new Matrix(pM, n, m);
+		Matrix p(pM, n, m);
 		for (int i=0; i<n; i++) delete [] pM[i];
 		delete [] pM;
-		return *p;
+		return p;
 	}
 
 
-Matrix& Matrix::operator| (Matrix &mat1)// Конкатенация матриц
+Matrix Matrix::operator| (Matrix &mat1)// Конкатенация матриц
 	{
 		myelement ** pM=new myelement*[n];
 		
@@ -76,14 +70,14 @@ Matrix& Matrix::operator| (Matrix &mat1)// Конкатенация матриц
 			for (int j=m; j<m+mat1.m; j++)
 				pM[i][j]=mat1.pm[i][j-m];
 		}
-		Matrix *p=new Matrix(pM, n, m+mat1.m);
+		Matrix p(pM, n, m+mat1.m);
 		for (int i=0; i<n; i++) delete [] pM[i];
 		delete [] pM;
-		return *p;
+		return p;
 		
 	}
 
-Matrix& Matrix::operator! ()// Поворот матриц
+Matrix Matrix::operator! ()// Поворот матриц
 	{
 		myelement ** pM=new myelement*[m];
 		
@@ -93,10 +87,10 @@ Matrix& Matrix::operator! ()// Поворот матриц
 			for (int j=0; j<n; j++)
 				pM[i][j]=pm[n-1-j][i];
 		}
-		Matrix *p=new Matrix(pM, m, n);
+		Matrix p(pM, m, n);
 		for (int i=0; i<m; i++) delete [] pM[i];
 		delete [] pM;
-		return *p;
+		return p;
 	}
 
 	
