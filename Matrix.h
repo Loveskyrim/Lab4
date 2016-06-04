@@ -8,7 +8,7 @@ class myelement;
 class Matrix
 {
 	myelement **pm;
-	int n,m; //n-строки, m-столбцы
+	int n,m; //n-СЃС‚СЂРѕРєРё, m-СЃС‚РѕР»Р±С†С‹
 
 public:
 //	myelement& index(int n1, int m1);
@@ -19,7 +19,7 @@ public:
 	Matrix& operator| (Matrix &mat1);
 	Matrix& operator! ();
 	friend ostream& operator<< (ostream& out, Matrix& mat1);
-	//friend istream& operator>> (istream& in, Matrix& mat1);
+	friend istream& operator>> (istream& in, Matrix& mat1);
 	
 	~Matrix(void);
 };

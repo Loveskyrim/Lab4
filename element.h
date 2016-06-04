@@ -1,5 +1,5 @@
 #pragma once
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 class myelement
@@ -21,11 +21,8 @@ public:
 	
 	myelement& operator+(myelement& el2);
 	friend myelement& operator* (myelement& el1, myelement& el2);
-//	friend ostream& operator<< (ostream& el1, myelement& el2);
-
-//	friend ostream& operator<< (ostream& out, myelement& el2);
-	//friend istream& operator>> (istream& in, myelement& el2);
-
+	friend ostream& operator<<(ostream& out, myelement& el2);
+	friend istream& operator>>(istream& in, myelement& el2);
 	~myelement(void);
 };
 
