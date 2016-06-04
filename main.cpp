@@ -11,9 +11,9 @@ using namespace std;
 myelement& operator* (myelement& el1, myelement& el2)
 {
 	myelement*p;
-		if (el1.modul!=el2.modul) //Операция недопустима при этом условии
+		if (el1.modul!=el2.modul) //РћРїРµСЂР°С†РёСЏ РЅРµРґРѕРїСѓСЃС‚РёРјР° РїСЂРё СЌС‚РѕРј СѓСЃР»РѕРІРёРё
 		{
-			p=new myelement(0,0); //Создаем несуществующий объект
+			p=new myelement(0,0); //РЎРѕР·РґР°РµРј РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№ РѕР±СЉРµРєС‚
 		}
 		else
 		{
@@ -24,26 +24,6 @@ myelement& operator* (myelement& el1, myelement& el2)
 }
 
 ostream& operator<< (ostream& out, Matrix& mat1)
-{
-	return out;
-}
-
-/*ostream& operator<< (ostream& out, element& el2)
-{
-	out<< "Modul:"<<el2.Getmodul<<endl;
-	out<< "Value:"<<el2.Getvalue<<endl;
-	return out;
-}
-
-istream& operator>> (istream& in, element& el2)
-{
-	in>>"Modul:">>el2.Getmodul >> endl;
-	in>>"Value:">>el2.Getvalue >> endl;
-	return in;
-}*/
-
-
-/*ostream& operator<< (ostream& out, Matrix& mat1)
 {
 	out << mat1.n << " " << mat1.m << endl;
 for (int i=0; i<mat1.n; i++)
@@ -58,22 +38,39 @@ return out;
 
 istream& operator>> (istream& in, Matrix& mat1)
 {
-	in >> mat1.n >> " " >> mat1.m;
+	in >> mat1.n;
+		cout<<" ";
+	in>> mat1.m;
 for (int i=0; i<mat1.n; i++)
 	{
 		
 		for (int j=0; j<mat1.m; j++)
-			in >> mat1.pm[i][j] >> " ";
+			in >> mat1.pm[i][j];
+		cout<< " ";
 }
 return in;
-}*/
-/*ostream& operator<<(ostream& out, myelement& el2)
+}
+
+ostream& operator<<(ostream& out, myelement& el2)
 
 {
 	out<< "("<< el2.modul<< ", "<< el2.value<< ") ";
 	return out;
 
-}*/
+}
+
+istream& operator>>(istream& in, myelement& el2)
+
+{
+	cout<<"Modul: ";
+	in >> el2.modul;
+	cout<<"Value: ";
+	in>>el2.value;
+	cout<< endl;
+	return in;
+
+}
+
 
 void main()
 
@@ -105,19 +102,19 @@ void main()
 	Matrix mat1(pm1, n, m), mat2(pm2, n, m),mat3,mat4, mat5;
 	mat3=mat1+mat2;
 
-	cout<<endl<<"Матрица 1:"<< endl;
+	cout<<endl<<"РњР°С‚СЂРёС†Р° 1:"<< endl;
 	mat1.Print();
-	cout<<endl<<"Матрица 2:"<< endl;
+	cout<<endl<<"РњР°С‚СЂРёС†Р° 2:"<< endl;
 	mat2.Print();
-	cout<< endl<<"Матрица1+Матрица2:"<< endl;
+	cout<< endl<<"РњР°С‚СЂРёС†Р°1+РњР°С‚СЂРёС†Р°2:"<< endl;
 	mat3.Print();
-	cout<<endl<<"Матрица перевернута"<<endl;
+	cout<<endl<<"РњР°С‚СЂРёС†Р° РїРµСЂРµРІРµСЂРЅСѓС‚Р°"<<endl;
 	mat5=!mat1;
 	mat5.Print();
-	cout<< endl<<"Конкатенация"<< endl;
+	cout<< endl<<"РљРѕРЅРєР°С‚РµРЅР°С†РёСЏ"<< endl;
 	mat4=mat1|mat2;
 	mat4.Print();
-	/*cout<< "Элемент второй матрицы"<<endl;
+	/*cout<< "Р­Р»РµРјРµРЅС‚ РІС‚РѕСЂРѕР№ РјР°С‚СЂРёС†С‹"<<endl;
 	mat2.index(1,1).Print();*/
 	cout<<endl;
 	system ("pause");

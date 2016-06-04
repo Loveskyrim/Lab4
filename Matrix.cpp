@@ -25,7 +25,7 @@ Matrix::Matrix(myelement **p, int n1, int m1)
 
 }
 
-	/*myelement& index(int n, int m)//Обращение по элементу
+	/*myelement& index(int n, int m)//РћР±СЂР°С‰РµРЅРёРµ РїРѕ СЌР»РµРјРµРЅС‚Сѓ
 {
 	
 	
@@ -47,7 +47,7 @@ void Matrix::Print()
 	}
 }
 
-Matrix& Matrix::operator+ (Matrix &mat1)// Сложение матриц
+Matrix& Matrix::operator+ (Matrix &mat1)// РЎР»РѕР¶РµРЅРёРµ РјР°С‚СЂРёС†
 	{
 		myelement ** pM=new myelement*[n];
 		
@@ -64,7 +64,7 @@ Matrix& Matrix::operator+ (Matrix &mat1)// Сложение матриц
 	}
 
 
-Matrix& Matrix::operator| (Matrix &mat1)// Конкатенация матриц
+Matrix& Matrix::operator| (Matrix &mat1)// РљРѕРЅРєР°С‚РµРЅР°С†РёСЏ РјР°С‚СЂРёС†
 	{
 		myelement ** pM=new myelement*[n];
 		
@@ -83,7 +83,7 @@ Matrix& Matrix::operator| (Matrix &mat1)// Конкатенация матриц
 		
 	}
 
-Matrix& Matrix::operator! ()// Поворот матриц
+Matrix& Matrix::operator! ()// РџРѕРІРѕСЂРѕС‚ РјР°С‚СЂРёС†
 	{
 		myelement ** pM=new myelement*[m];
 		

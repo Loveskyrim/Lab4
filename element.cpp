@@ -39,9 +39,9 @@ void myelement::PrintForMatr()
 	myelement& myelement::operator+(myelement& el2)
 	{
 		myelement*p;
-		if (modul!=el2.modul) //Операция недопустима при этом условии
+		if (modul!=el2.modul) //РћРїРµСЂР°С†РёСЏ РЅРµРґРѕРїСѓСЃС‚РёРјР° РїСЂРё СЌС‚РѕРј СѓСЃР»РѕРІРёРё
 		{
-			p=new myelement(0,0); //Создаем несуществующий объект
+			p=new myelement(0,0); //РЎРѕР·РґР°РµРј РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№ РѕР±СЉРµРєС‚
 		}
 		else
 		{
